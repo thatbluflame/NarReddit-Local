@@ -19,7 +19,7 @@ NarReddit-Local is a locally running version of NarReddit, a tool for generating
 ## Known Issues
 - The project is still in development and may be unstable or have missing features.
 - The user interface is currently rudimentary and not visually appealing.
-- Some features present in NarReddit may be missing or incomplete.
+- Some features present in NarReddit may be missing or incomplete. (Multilingual Video Output, OPENAI API)
 
 ## Contributing
 Contributions to improve and extend NarReddit-Local are welcome! Feel free to submit bug reports, feature requests, or pull requests to help make this project better.
