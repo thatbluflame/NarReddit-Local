@@ -9,13 +9,14 @@ NarReddit-Local is a locally running version of NarReddit, a tool for generating
 - Selects random background videos from the `background_videos/minecraft` folder.
 
 ## Usage
-1. Ensure you have the required input files:
+1. Install the packages using `pip install -r requirements.txt` in the Command Line
+2. Ensure you have the required input files:
    - `title-text.txt`: Contains the title text for the video.
    - `description-text.txt`: Contains the description text for the video.
-2. Add a video file to the `background_videos/minecraft` folder for the background.
-3. Add your Logo to `intro_card_template` as `logo.png`
-4. Run the script: `python main.py`
-5. The generated video will be saved as `final.mp4`.
+3. Add a video file to the `background_videos/minecraft` folder for the background.
+4. Add your Logo to `intro_card_template` as `logo.png`
+5. Run the script: `python main.py`
+6. The generated video will be saved as `final.mp4`.
 
 ## Known Issues
 - The project is still in development and may be unstable or have missing features.
