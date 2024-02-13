@@ -1,1 +1,0 @@
-Put stock footage for whatever background videos you want in the final product in this directory

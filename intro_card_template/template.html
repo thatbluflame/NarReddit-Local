@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width"/>
+    <link rel="stylesheet" href="index.css">
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fontfaceobserver/2.1.0/fontfaceobserver.standalone.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <header class="mainrect-parent">
+        <div class="mainrect"></div>
+        <div class="frame-wrapper">
+          <div class="logo-frame-parent">
+            <div class="logo-frame">
+              <img
+                class="logopicture-icon"
+                loading="eager"
+                alt=""
+                src="logo.png"
+              />
+
+              <div class="username">{{ username }}</div>
+            </div>
+            <div class="frameviews">
+              <img
+                class="views-icon"
+                loading="eager"
+                alt=""
+                src="views.svg"
+              />
+
+              <div class="m">1.2M</div>
+            </div>
+          </div>
+        </div>
+        <div class="title-text-container"><div class="main-text">{{ titleText }}</div></div>
+        <footer class="line-frame">
+          <div class="third-frame"></div>
+          <div class="frames-with-vector-k">
+            <div class="k-vector-pair">
+              <div class="likescomments">
+                <img
+                  class="likes-icon"
+                  loading="eager"
+                  alt=""
+                  src="upvote.svg"
+                />
+
+                <div class="likes-text">24.2K</div>
+              </div>
+              <div class="likescomments1">
+                <img
+                  class="comments-icon"
+                  loading="eager"
+                  alt=""
+                  src="comment.svg"
+                />
+                <div class="commentstext">462</div>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </header>
+    </div>
+  </body>
+  <script>
+    // Get Objects
+    const output = document.querySelector(".main-text");
+    const outputContainer = document.querySelector(".title-text-container");
+    const font = new FontFaceObserver('Inter');
+
+    function resize_to_fit() {
+      let fontSize = parseFloat(window.getComputedStyle(output).fontSize); // Get Font-Size in ComputedStyle
+      output.style.fontSize = (fontSize - 1) + 'px';
+      console.log("fontSize: " + fontSize)
+      console.log("Container: " + outputContainer.clientHeight)
+      console.log("Output: " + output.clientHeight)
+      // If the Text is still to big 'resize_to_fit' get call again
+      if(output.clientHeight >= outputContainer.clientHeight){
+        resize_to_fit();
+      }
+    }
+
+    function setupText() { 
+      output.style.fontSize = '100px'; // Sets Font Size for Title Text
+      resize_to_fit();
+    }
+
+    // Called on Load
+    /*document.addEventListener("DOMContentLoaded", function(event) {
+      setupText();
+    });*/
+
+    Promise.all([font.load()]).then(() => {
+
+      setupText();
+    }).catch(() => {
+      // At least one font failed to load
+      // Handle error if needed
+    });
+  </script>
+</html>
