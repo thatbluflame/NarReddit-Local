@@ -14,7 +14,7 @@ NarReddit-Local is a locally running version of NarReddit, a tool for generating
    - `description-text.txt`: Contains the description text for the video.
 2. Add a video file to the `background_videos/minecraft` folder for the background.
 3. Run the script: `python main.py`
-4. The generated video will be saved in the `output` folder.
+4. The generated video will be saved as `final.mp4`.
 
 ## Known Issues
 - The project is still in development and may be unstable or have missing features.
