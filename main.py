@@ -151,7 +151,7 @@ def process_video(title_audio_path, description_audio_path, title_image_path, su
     if start_time is None:
       start_time = random_start_time(video_duration, merged_audio_duration)
 
-    video = ffmpeg.input(background_video_path)
+    video = ffmpeg.input(background_video_path, stream_loop=-1)
     video = video.trim(start=start_time, end=start_time + merged_audio_duration + 0.3)
     video = video.setpts('PTS-STARTPTS')
 
